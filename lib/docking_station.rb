@@ -14,10 +14,12 @@ attr_reader :bikes
     @bikes.pop
   end
 
+DEFAULT_CAPACITY = 20
+
 private
 
   def full?
-    @bikes.length == 20
+    @bikes.length == DEFAULT_CAPACITY
   end
 
   def empty?
