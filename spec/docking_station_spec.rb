@@ -5,4 +5,8 @@ describe DockingStation do
     expect(DockingStation.new.release_bike).to be_an_instance_of(Bike)
   end
 
+  it 'dock' do
+    expect(DockingStation.new).to respond_to(:dock).with(1).argument
+  end
+  
 end
