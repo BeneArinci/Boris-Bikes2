@@ -2,7 +2,7 @@ require 'docking_station'
 
 describe DockingStation do
 
-  describe 'release_bike' do
+  it 'release_bike' do
 
   end
 end
