@@ -1,18 +1,22 @@
 class DockingStation
-attr_reader :docking_station
+attr_reader :bikes
+  def initialize
+    @bikes = []
+  end
+
   def dock(bike)
-    if @docking_station.nil?
-      @docking_station = bike
+    if @bikes.length < 20
+      @bikes << bike
     else
       fail "no space available"
-    end 
+    end
   end
 
   def release_bike
-    if @docking_station.nil?
+    if @bikes.empty?
       fail "no bikes available"
     else
-      @docking_station = nil
+      @bikes.pop
     end
   end
 end

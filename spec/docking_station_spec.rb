@@ -12,7 +12,7 @@ describe DockingStation do
 
   it 'dock a bike if no space available' do
     docking_test = DockingStation.new
-    docking_test.dock('bike')
+    20.times{docking_test.dock('bike')}
     expect {docking_test.dock('bike')}.to raise_error("no space available")
   end
 end
