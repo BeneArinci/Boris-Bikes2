@@ -5,7 +5,11 @@ attr_reader :docking_station
   end
 
   def release_bike
-    Bike.new
+    if @docking_station.nil?
+      fail "no bikes available"
+    else
+      @docking_station = nil
+    end
   end
 end
 
