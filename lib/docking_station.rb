@@ -5,19 +5,23 @@ attr_reader :bikes
   end
 
   def dock(bike)
-    if @bikes.length < 20
-      @bikes << bike
-    else
-      fail "no space available"
-    end
+    fail "no space available" if full?
+    @bikes << bike
   end
 
   def release_bike
-    if @bikes.empty?
-      fail "no bikes available"
-    else
-      @bikes.pop
-    end
+    fail "no bikes available" if empty?
+    @bikes.pop
+  end
+
+private
+
+  def full?
+    @bikes.length == 20
+  end
+
+  def empty?
+   @bikes.empty?
   end
 end
 
