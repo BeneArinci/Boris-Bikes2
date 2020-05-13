@@ -15,4 +15,13 @@ describe DockingStation do
     20.times{docking_test.dock('bike')}
     expect {docking_test.dock('bike')}.to raise_error("no space available")
   end
+
+it 'when passed no arguments, sets DEFAULT_CAPACITY' do
+  expect(DockingStation.new.instance_variable_get(:@capacity)).to eq(20)
+end
+
+it 'when passed no arguments, sets DEFAULT_CAPACITY' do
+  expect(DockingStation.new(30).instance_variable_get(:@capacity)).to eq(30)
+end
+
 end
